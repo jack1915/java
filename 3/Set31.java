@@ -5,26 +5,27 @@ import java.util.Scanner;
 public class Set31 {
     public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Введите размер исходного массива ---> ");
-        Integer n = scan.nextInt();
-        int[] list = new int[n];
+        try (Scanner scan = new Scanner(System.in)) {
+            System.out.print("Введите размер исходного массива ---> ");
+            Integer n = scan.nextInt();
+            int[] list = new int[n];
 
-        for (int i = 0; i < n; i++) {
-            list[i] = (int) (10 + (Math.random() * (100 - 10)));
+            for (int i = 0; i < n; i++) {
+                list[i] = (int) (10 + (Math.random() * (100 - 10)));
+            }
+
+            System.out.print("Исходный массив --->  ");
+            for (int i : list)
+                System.out.print(" " + i);
+
+            System.out.println();
+
+            mergeSort(list, n);
+
+            System.out.print("После сортировки --->  ");
+            for (int i : list)
+                System.out.print(" " + i);
         }
-
-        System.out.print("Исходный массив --->  ");
-        for (int i : list)
-            System.out.print(" " + i);
-
-        System.out.println();
-
-        mergeSort(list, n);
-
-        System.out.print("После сортировки --->  ");
-        for (int i : list)
-            System.out.print(" " + i);
 
     }
 
